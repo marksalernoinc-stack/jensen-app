@@ -1,6 +1,8 @@
 import { Play, Film, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroPortrait from "@/assets/hero-portrait.jpg";
+import jensenVideo from "@/assets/jensen.mp4";
+import jensenImage from "@/assets/jensen1.jpg";
 import { useEffect, useRef, useState } from "react";
 
 const HeroSection = () => {
@@ -93,14 +95,8 @@ const HeroSection = () => {
                 opacity: videoLoaded ? opacityValue : 0,
               }}
             >
-              <source
-                src="https://cdn.coverr.co/videos/coverr-actor-in-dramatic-lighting-9735/1080p.mp4"
-                type="video/mp4"
-              />
-              <source
-                src="https://cdn.coverr.co/videos/coverr-cinematic-portrait-9736/1080p.mp4"
-                type="video/mp4"
-              />
+              <source src={jensenVideo} type="video/mp4" />
+              <source src={jensenVideo} type="video/mp4" />
             </video>
             {!videoLoaded && (
               <img
@@ -197,7 +193,7 @@ const HeroSection = () => {
             <Button
               variant="heroOutline"
               size="xl"
-              onClick={() => scrollToSection("about")}
+              onClick={() => scrollToSection("events")} //about
             >
               <Play className="w-5 h-5" />
               Watch Showreel
