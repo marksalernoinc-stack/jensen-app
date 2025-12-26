@@ -80,7 +80,7 @@ const EventsSection = () => {
   return (
     <section id="events" className="py-32 relative">
       <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 gap-12 xl:gap-16 items-start lg:grid-cols-[1.1fr_0.9fr]">
           {/* Events */}
           <div className="space-y-8">
             <div>
@@ -129,30 +129,32 @@ const EventsSection = () => {
             </div>
 
             {/* Pagination */}
-            <div className="flex items-center justify-between py-4">
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={handlePrevPage}
-                disabled={currentPage === 0}
-                className="disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                <ChevronLeft className="w-4 h-4 mr-1" />
-                Previous
-              </Button>
-              <span className="text-sm text-muted-foreground">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between py-4">
+              <div className="flex flex-col gap-4 sm:flex-row sm:gap-2 w-full sm:w-auto">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={handlePrevPage}
+                  disabled={currentPage === 0}
+                  className="disabled:opacity-50 disabled:cursor-not-allowed w-full sm:w-auto"
+                >
+                  <ChevronLeft className="w-4 h-4 mr-1" />
+                  Previous
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={handleNextPage}
+                  disabled={currentPage === totalPages - 1}
+                  className="disabled:opacity-50 disabled:cursor-not-allowed w-full sm:w-auto"
+                >
+                  Next
+                  <ChevronRight className="w-4 h-4 ml-1" />
+                </Button>
+              </div>
+              <span className="text-center sm:text-right text-sm text-muted-foreground">
                 Page {currentPage + 1} of {totalPages}
               </span>
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={handleNextPage}
-                disabled={currentPage === totalPages - 1}
-                className="disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                Next
-                <ChevronRight className="w-4 h-4 ml-1" />
-              </Button>
             </div>
 
             <a
@@ -168,22 +170,22 @@ const EventsSection = () => {
           </div>
 
           {/* Newsletter */}
-          <div className="mt-8">
-            <div className="mt-8 aspect-video w-full h-[350px]">
-              <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube.com/embed/8DBviaBbKKs"
-                title="Countdown: Meacham Blacks Out"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-                className="w-full max-w-4xl aspect-video mx-auto rounded-lg"
-              ></iframe>
+          <div className="space-y-8">
+            <div className="rounded-2xl overflow-hidden border border-white/5 shadow-2xl">
+              <div className="relative w-full aspect-video">
+                <iframe
+                  src="https://www.youtube.com/embed/8DBviaBbKKs"
+                  title="Countdown: Meacham Blacks Out"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
+                ></iframe>
+              </div>
             </div>
 
-            <div className="glass-card rounded-2xl p-10 glow-border mt-8">
+            <div className="glass-card rounded-2xl p-10 glow-border">
               <div className="space-y-6">
                 <div>
                   <p className="text-primary font-medium tracking-[0.2em] uppercase text-sm mb-4">

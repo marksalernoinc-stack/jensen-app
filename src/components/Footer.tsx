@@ -121,7 +121,7 @@ const Footer = () => {
           {/* Copyright */}
           <div className="text-center text-sm text-muted-foreground pt-8 border-t border-border w-full">
             <p>
-              © {currentYear} Jensen Ackles Fan Page. Made with{" "}
+              © {currentYear} Jensen Ackles Page. Made with{" "}
               <Heart className="w-4 h-4 inline text-primary" /> for the SPN
               Family.
             </p>

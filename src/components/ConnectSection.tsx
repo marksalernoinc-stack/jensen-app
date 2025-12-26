@@ -7,21 +7,72 @@ import {
   DollarSign,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useEffect, useRef, useState } from "react";
+import connectBackground from "@/assets/jensen3.jpg";
+import darkConnectBackground from "@/assets/jensen3.jpg";
 
 const ConnectSection = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0.5, y: 0.5 });
+
+  useEffect(() => {
+    const sectionElement = sectionRef.current;
+    if (!sectionElement) return;
+
+    const handleMouseMove = (event: MouseEvent) => {
+      const rect = sectionElement.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width;
+      const y = (event.clientY - rect.top) / rect.height;
+      setMousePosition({ x, y });
+    };
+
+    sectionElement.addEventListener("mousemove", handleMouseMove);
+    return () =>
+      sectionElement.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
+  const mouseParallaxX = (mousePosition.x - 0.5) * 80;
+  const mouseParallaxY = (mousePosition.y - 0.5) * 80;
+
   return (
-    <section id="connect" className="py-32 relative overflow-hidden">
+    <section
+      id="connect"
+      ref={sectionRef}
+      className="py-32 relative overflow-hidden"
+    >
+      {/* Parallax background image */}
+      <div
+        className="absolute inset-0 z-0 pointer-events-none"
+        style={{
+          transform: `translate3d(${mouseParallaxX}px, ${mouseParallaxY}px, 0) scale(1.1)`,
+          transition: "transform 0.25s cubic-bezier(0.22, 0.61, 0.36, 1)",
+          willChange: "transform",
+        }}
+      >
+        <img
+          src={connectBackground}
+          alt="Jensen Ackles cinematic background"
+          className="w-full block dark:hidden h-full object-cover object-right-top opacity-30"
+        />
+        <img
+          src={darkConnectBackground}
+          alt="Jensen Ackles cinematic background"
+          className="w-full hidden dark:block h-full object-cover object-right-top opacity-30"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/80 to-background/95" />
+      </div>
+
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-background to-primary/5" />
+      <div className="hidden dark:block absolute inset-0 z-10 bg-gradient-to-b from-primary/5 via-background to-primary/5" />
 
       {/* Animated background elements */}
-      <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-      <div className="absolute top-1/2 right-0 w-96 h-96 bg-primary/15 rounded-full blur-3xl -translate-y-1/2" />
-      <div className="absolute bottom-0 left-1/3 w-80 h-80 bg-primary/10 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl z-10" />
+      <div className="absolute top-1/2 right-0 w-96 h-96 bg-primary/15 rounded-full blur-3xl -translate-y-1/2 z-10" />
+      <div className="absolute bottom-0 left-1/3 w-80 h-80 bg-primary/10 rounded-full blur-3xl z-10" />
 
       {/* Overlay pattern */}
       <div
-        className="absolute inset-0 opacity-5"
+        className="absolute inset-0 opacity-5 z-10"
         style={{
           backgroundImage:
             "radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)",
@@ -29,7 +80,7 @@ const ConnectSection = () => {
         }}
       />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 relative z-20">
         <div className="max-w-2xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">

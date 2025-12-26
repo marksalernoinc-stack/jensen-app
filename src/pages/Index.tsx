@@ -15,13 +15,13 @@ const Index = () => {
     <>
       <Helmet>
         <title>
-          Jensen Ackles | Actor, Musician, Family Man - Official Fan Page
+          Jensen Ackles | Actor, Musician, Family Man - Official Page
         </title>
         <meta
           name="description"
           content="Explore the world of Jensen Ackles - from Dean Winchester in Supernatural to Soldier Boy in The Boys. Discover his filmography, music with Radio Company, and upcoming events."
         />
-        <meta property="og:title" content="Jensen Ackles - Official Fan Page" />
+        <meta property="og:title" content="Jensen Ackles - Official Page" />
         <meta
           property="og:description"
           content="Actor, Musician, Family Man. From Supernatural to The Boys - discover Jensen's journey."
