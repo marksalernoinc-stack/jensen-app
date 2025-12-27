@@ -1,10 +1,10 @@
 import {
   MessageCircle,
-  MapPin,
   CreditCard,
   Phone,
   Bell,
-  DollarSign,
+  Instagram,
+  Facebook,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useRef, useState } from "react";
@@ -113,19 +113,19 @@ const ConnectSection = () => {
               </Button>
             </a>
 
-            {/* Meet Me IRL */}
+            {/* Instagram */}
             <a
-              href="https://jensenackles.net/"
+              href="https://www.instagram.com/jensenackles?igsh=cmIxNW4xcnZpMzl0"
               target="_blank"
               rel="noopener noreferrer"
               className="block"
             >
               <Button
-                className="w-full h-14 text-lg bg-green-700 hover:bg-green-800 text-white"
+                className="w-full h-14 text-lg bg-pink-600 hover:bg-pink-700 text-white"
                 size="lg"
               >
-                <MapPin className="w-5 h-5 mr-2" />
-                Meet Me IRL
+                <Instagram className="w-5 h-5 mr-2" />
+                Instagram
               </Button>
             </a>
 
@@ -183,19 +183,19 @@ const ConnectSection = () => {
               </Button>
             </a>
 
-            {/* Tip Me */}
+            {/* Facebook */}
             <a
-              href="https://jensenackles.net/"
+              href="https://www.facebook.com/JensenAckles?mibextid=wwXIfr&mibextid=wwXIfr"
               target="_blank"
               rel="noopener noreferrer"
               className="block"
             >
               <Button
-                className="w-full h-14 text-lg bg-gray-800 hover:bg-gray-900 text-white"
+                className="w-full h-14 text-lg bg-blue-700 hover:bg-blue-800 text-white"
                 size="lg"
               >
-                <DollarSign className="w-5 h-5 mr-2" />
-                Tip Me
+                <Facebook className="w-5 h-5 mr-2" />
+                Facebook
               </Button>
             </a>
           </div>
