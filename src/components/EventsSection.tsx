@@ -78,7 +78,7 @@ const EventsSection = () => {
   };
 
   return (
-    <section id="events" className="py-32 relative">
+    <section id="events" className="py- relative">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 gap-12 xl:gap-16 items-start lg:grid-cols-[1.1fr_0.9fr]">
           {/* Events */}
