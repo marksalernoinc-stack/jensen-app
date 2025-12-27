@@ -6,6 +6,7 @@ import ConnectSection from "@/components/ConnectSection";
 import FilmographySection from "@/components/FilmographySection";
 import MusicSection from "@/components/MusicSection";
 import FanSection from "@/components/FanSection";
+import TestimonialSection from "@/components/TestimonialSection";
 import EventsSection from "@/components/EventsSection";
 import Footer from "@/components/Footer";
 import { FloatingThemeToggle } from "@/components/FloatingThemeToggle";
@@ -39,6 +40,7 @@ const Index = () => {
           <ConnectSection />
           <FilmographySection />
           <FanSection />
+          <TestimonialSection />
           <EventsSection />
         </main>
         <Footer />
