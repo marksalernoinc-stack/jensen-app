@@ -5,6 +5,7 @@ import {
   Bell,
   Instagram,
   Facebook,
+  Twitter,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useRef, useState } from "react";
@@ -130,7 +131,7 @@ const ConnectSection = () => {
             </a>
 
             {/* Buy Fans ID Card */}
-            <a href="sms:+13183194267" className="block">
+            <a href="https://wa.me/13183194267" className="block">
               <Button
                 className="w-full h-14 text-lg bg-yellow-500 hover:bg-yellow-600 text-white"
                 size="lg"
@@ -140,30 +141,19 @@ const ConnectSection = () => {
               </Button>
             </a>
 
-            {/* Chat on WhatsApp */}
+            {/* Twitter */}
             <a
-              href="https://wa.me/13183194267"
+              href="https://x.com/jensenackles?s=21"
               target="_blank"
               rel="noopener noreferrer"
               className="block"
             >
               <Button
-                className="w-full h-14 text-lg bg-green-600 hover:bg-green-700 text-white"
-                size="lg"
-              >
-                <Phone className="w-5 h-5 mr-2" />
-                Chat on WhatsApp
-              </Button>
-            </a>
-
-            {/* Text Us */}
-            <a href="sms:+13183194267" className="block">
-              <Button
                 className="w-full h-14 text-lg bg-yellow-500 hover:bg-yellow-600 text-white"
                 size="lg"
               >
-                <MessageCircle className="w-5 h-5 mr-2" />
-                Text Us
+                <Twitter className="w-5 h-5 mr-2" />
+                Twitter
               </Button>
             </a>
 
