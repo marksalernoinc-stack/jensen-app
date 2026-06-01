@@ -100,7 +100,7 @@ const ConnectSection = () => {
           <div className="space-y-4">
             {/* Chat with Me */}
             <a
-              href="https://t.me/jensenackles_inc"
+              href="https://teams.live.com/l/invite/FEAqu4SOLqwvlPbyAY?v=g1"
               target="_blank"
               rel="noopener noreferrer"
               className="block"
